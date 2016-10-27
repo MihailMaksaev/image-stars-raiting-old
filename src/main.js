@@ -1,1 +1,3 @@
-console.log("1");
+import './main.css' 
+
+console.log("7");
