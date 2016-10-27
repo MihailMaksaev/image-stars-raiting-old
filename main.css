@@ -1,0 +1,23 @@
+div.control_stars {
+	width: 
+}
+
+.control_stars span{
+	
+	float: left;
+	display: block;
+	height: 32px;
+	width: 32px;
+	background-image: url(foneStar.png);	
+}
+
+
+
+
+
+.control_stars span:hover {
+   
+   	cursor: pointer;
+	background-color: #f6d654;
+	
+}
