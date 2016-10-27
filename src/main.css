@@ -1,23 +1,36 @@
-div.control_stars {
-	width: 
-}
+$starSize: 32px;
+$starColor: green;
+$startReit: 0.5;
+$starsWidth: calc(5 * $starSize);
 
-.control_stars span{
+
+#control_stars {
 	
+	position: relative;
+	
+	width: $starsWidth;
+	height: $starSize;
+	
+   & span{	
 	float: left;
 	display: block;
-	height: 32px;
-	width: 32px;
-	background-image: url(foneStar.png);	
-}
-
-
-
-
-
-.control_stars span:hover {
+	height: $starSize;
+	width: $starSize;
+	background-image: url(foneStar.png);
+         
+		 &:hover{
+			 
+			cursor: pointer;
+	        background-color: $starColor;
+		 }
+        		 
+   }
    
-   	cursor: pointer;
-	background-color: #f6d654;
-	
+   &> div{
+	    height:  $starSize;
+		width:calc( $starsWidth * $startReit );
+		background-color: $starColor;
+   }   
 }
+
+ 
