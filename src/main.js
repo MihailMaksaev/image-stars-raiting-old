@@ -1,17 +1,26 @@
 import './main.css' 
 
-var starSize = 32;
+var numStars = 5; //количество звезд
+var starSize = 32; //размер картинки
 
-var olrRaiting = 0.6;
-var numGlobalClick = 3;
+//var olrRaiting = 0.6; //старый рейтинг в долях
 
 var controlStars = document.getElementById("control_stars");
+var olrRaiting  = Number(controlStars.getAttribute('data-raiting'));
+var numGlobalClick = Number(controlStars.getAttribute('data-numclick')); // количество кликов общее берется со страници
 
-var controlStarsOffset = controlStars.offsetLeft;
 
-var scrollStars =  controlStars.querySelector("div");
+var controlStarsOffset = controlStars.offsetLeft;  
 
-scrollStars.style.width="0px";
+var scrollStars  = document.createElement('div'); //заполнение рейтингом
+
+for(var i=0; i<numStars; i++){
+	
+	controlStars.appendChild(document.createElement('span'));
+}
+
+//debugger;
+controlStars.appendChild(scrollStars);
 
 controlStars.addEventListener("click", clickOnStar());
 
@@ -19,6 +28,7 @@ controlStars.addEventListener("mouseover", hoverOnStar);
 
 controlStars.addEventListener("mouseout", hoverOutOnStar);
 
+scrollStars.style.width="0px";
 
 function hoverOnStar(e){
 	
@@ -29,10 +39,8 @@ function hoverOnStar(e){
 }
 
 function hoverOutOnStar(e){
-	
-	
-	scrollStars.style.width = "0px";
-	
+		
+	scrollStars.style.width = "0px";	
 }
 function clickOnStar(){
 	
@@ -50,7 +58,7 @@ function clickOnStar(){
 			var clickCoord = e.pageX - controlStarsOffset;
 	        
 			
-			var raiting = clickCoord/(starSize*5);
+			var raiting = clickCoord/(starSize*numStars);
 			var num;
 			switch(true){
 				case raiting < 0.2:
@@ -73,7 +81,7 @@ function clickOnStar(){
 			var newReit = olrRaiting - dole + 1/numGlobalClick*num;
 			
 			console.log("starReit"+num);
-			scrollStars.style.width = (starSize*5*newReit)+"px";
+			scrollStars.style.width = (starSize*numStars*newReit)+"px";
 			
 
 		}
@@ -81,9 +89,6 @@ function clickOnStar(){
 
 		
     numClick++;
-	
-	//console.dir(e.pageX);
-	//console.dir(clickCoord);
 	
 	}
 	
