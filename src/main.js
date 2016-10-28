@@ -79,8 +79,7 @@ function clickOnStar(){
 			var dole = 1/numGlobalClick*olrRaiting;
 			
 			var newReit = olrRaiting - dole + 1/numGlobalClick*num;
-			
-			console.log("starReit"+num);
+
 			scrollStars.style.width = (starSize*numStars*newReit)+"px";
 			
 
