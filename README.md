@@ -6,7 +6,7 @@ npm i - для установки и редактирования
 
 для включения рейтинга на страницу необходимо добавить в index.html следующий код: 
 
-&lt div id=&quotcontrol_stars&quot data-raiting=&quot0.6&quot data-numclick=&quot3&quot &gt &lt/div &gt
+&lt; div id=&quotcontrol_stars&quot data-raiting=&quot0.6&quot data-numclick=&quot3&quot &gt &lt/div &gt
    
 &lt script type=&quottext/javascript&quot src=&quotdist/stars-raiting.js&quot &gt &lt /script &gt 
 
